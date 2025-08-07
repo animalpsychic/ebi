@@ -734,7 +734,6 @@ Ebi mengandung berbagai nutrisi penting yang memberikan manfaat bagi tubuh, anta
 - Konsumsi berlebihan dapat meningkatkan risiko tekanan darah tinggi.
 - Penderita hipertensi sebaiknya membatasi penggunaannya.
 
-
 ## Ebi dalam Budaya Kuliner Indonesia dan Asia
 
 Ebi bukan sekadar bahan masakan, tetapi juga bagian dari identitas budaya kuliner di berbagai negara Asia, terutama Indonesia, Jepang, Tiongkok, dan negara-negara Asia Tenggara lainnya. Penggunaan ebi mencerminkan kebiasaan makan, selera lokal, hingga nilai tradisional yang diwariskan secara turun-temurun.
