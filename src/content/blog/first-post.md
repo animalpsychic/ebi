@@ -2,7 +2,7 @@
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2022"
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPLXW_owpPEylz34klLBm9-_Dw0Kyzfqh3_LHFJkZ9YKmXLjWKsKCP2B3mAW3QbVhz7MTnsMpSjZNEu805WpBRAb-dzCKkeTxf0aBDwHBj5nL9nqa-Of3VjzIQUj2LDS0jHJTAYUYJg947NM13mDBM6dlrPDlVMP8hxzA3c3h6z4ktTj0R9KHNr3gUTceJ/s16000/2.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
