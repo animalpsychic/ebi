@@ -2,7 +2,7 @@
 title: "Apa itu ebi, bedanya apa dengan udang?"
 description: "Ebi adalah istilah yang digunakan untuk menyebut udang kecil yang telah dikeringkan, biasanya setelah direbus atau dikukus terlebih dahulu."
 pubDate: "Jul 08 2025"
-heroImage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPLXW_owpPEylz34klLBm9-_Dw0Kyzfqh3_LHFJkZ9YKmXLjWKsKCP2B3mAW3QbVhz7MTnsMpSjZNEu805WpBRAb-dzCKkeTxf0aBDwHBj5nL9nqa-Of3VjzIQUj2LDS0jHJTAYUYJg947NM13mDBM6dlrPDlVMP8hxzA3c3h6z4ktTj0R9KHNr3gUTceJ/s16000/2.jpg"
+heroImage: "/blog-placeholder-3.jpg"
 ---
 ## Daftar Isi
 
