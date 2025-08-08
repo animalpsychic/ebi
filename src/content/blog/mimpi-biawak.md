@@ -1,7 +1,8 @@
 ---
 title: "Arti Mimpi Biawak Menurut Primbon, Psikologi, dan Tafsir Modern"
 description: "Panduan lengkap menafsirkan mimpi biawak dari berbagai sudut pandang, mulai dari primbon Jawa, psikologi mimpi, hingga simbolisme modern."
-pubDate: "02-07-2025"
+pubDate: "2025-08-09"
+heroImage: "https://images.unsplash.com/photo-1596773356070-5b1b1b1b1b1b"
 ---
 
 # Arti Mimpi Biawak Menurut Primbon, Psikologi, dan Tafsir Modern
