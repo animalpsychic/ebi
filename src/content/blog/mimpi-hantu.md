@@ -1,7 +1,7 @@
 ---
 title: "Mimpi Hantu: Makna dan Tafsirnya dalam Budaya Indonesia"
 description: "Artikel ini membahas tentang makna dan tafsir mimpi hantu dalam budaya Indonesia, serta pengaruhnya terhadap kehidupan sehari-hari."
-pubDate: "9 Agustus 2024"
+pubDate: "Jul 15 2025""
 ---
 
 # Mimpi Hantu: Makna dan Tafsirnya dalam Budaya Indonesia
