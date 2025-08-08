@@ -2,7 +2,7 @@
 title: "Misteri di Balik Mimpi Kepiting: Tafsir dan Maknanya"
 description: "Mengeksplorasi secara mendalam berbagai tafsir mimpi tentang kepiting, dari simbolisme emosional hingga pertanda kehidupan."
 pubDate: "2025-08-09"
-heroImage: "https://images.unsplash.com/photo-1549448373-19942a00c62e"
+heroImage: "/blog-placeholder-3.jpg"
 ---
 
 ## Mengungkap Tabir Misteri: Tafsir Mimpi Kepiting
