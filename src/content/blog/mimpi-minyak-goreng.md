@@ -1,7 +1,7 @@
 ---
 title: "Arti Mimpi Membeli Minyak Goreng: Perspektif Primbon Jawa, Islami, dan Psikologi"
-description: "isi deskripsi"
-pubDate: "Agu 09 2025"
+description: "Carai tahu arti mimpi memebeli minyak goreng disini, pahamkan? Tafsir mimpi ada maknanya"
+pubDate: "2025-08-10"
 ---
 Menganalisis Mimpi Membeli Minyak Goreng: Perspektif Primbon Jawa, Islam, dan Psikologi
 
