@@ -2,6 +2,7 @@
 title: "Menguak Misteri Mimpi Adu Ayam"
 description: "Menguak Makna Mendalam Mimpi Adu Ayam: Perspektif Historis, Kultural, Tradisional, dan Psikologis"
 pubDate: "Jul 29 2025"
+heroImage: "https://dummyimage.com/600x400/000/fff.jpg&text=Adu+Ayam"
 ---
 
 Mimpi seringkali dianggap sebagai cerminan alam bawah sadar, membawa pesan, peringatan, atau refleksi dari pengalaman hidup yang dialami seseorang. Fenomena mimpi, yang telah memicu rasa ingin tahu manusia sepanjang sejarah, selalu menjadi sebuah teka-teki yang menarik untuk diungkap maknanya. Dalam konteks budaya Nusantara, salah satu mimpi yang kaya akan simbolisme dan berakar kuat dalam tradisi adalah 'mimpi adu ayam'. Pemahaman bahwa penafsiran mimpi merupakan sebuah jalan menuju pengetahuan akan kegiatan alam bawah sadar, seperti yang diungkapkan oleh Sigmund Freud, menegaskan bahwa mimpi memiliki makna yang mendalam, bahkan yang paling "aneh" sekalipun.
