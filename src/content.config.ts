@@ -17,7 +17,7 @@ const blog = defineCollection({
 
 const obat = defineCollection({
   // Load Markdown and MDX files in the `src/content/obat/` directory.
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: "./src/content/obat", pattern: "**/*.{md,mdx}" }),
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
@@ -31,7 +31,7 @@ const obat = defineCollection({
 
 const ilmu = defineCollection({
   // Load Markdown and MDX files in the `src/content/ilmu/` directory.
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: "./src/content/ilmu", pattern: "**/*.{md,mdx}" }),
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
