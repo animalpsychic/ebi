@@ -1,177 +1,615 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eby</title>
-  <meta name="description" content="Blog Ebi" />
-  <meta name="author" content="Ebi" />
-  <meta name="robots" content="index, follow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0d10; --card:#12161b; --muted:#8ea0b3; --text:#e7edf5; --brand:#63e; --brand-2:#59f; --accent:#22c55e; --ring:rgba(99, 102, 241, .45);
-      --shadow:0 10px 30px rgba(0,0,0,.35), 0 2px 10px rgba(99,102,241,.15)
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:linear-gradient(180deg, #0b0d10 0%, #0c1016 50%, #0b0d10 100%); color:var(--text); font-family:'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.6}
-    a{color:var(--brand); text-decoration:none}
-    a:hover{color:var(--brand-2)}
-    .container{max-width:1120px; margin:0 auto; padding:24px}
-    header.nav{position:static; top:0; z-index:40; backdrop-filter:saturate(1.2) blur(10px); background:rgba(11,13,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{display:flex; gap:14px; align-items:center; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.25px}
-    .brand .logo{width:34px; height:34px}
-    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); border-radius:999px; font-size:.85rem; color:var(--muted)}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; border:0; border-radius:14px; box-shadow:var(--shadow); cursor:pointer}
-    .btn.secondary{background:#1d2330}
-    .btn:hover{transform:translateY(-1px)}
-    .grid{display:grid; gap:24px}
-    .hero{padding:48px 0 16px}
-    .hero-card{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; padding:28px; border-radius:24px; background:radial-gradient(1200px 600px at 0% -10%, rgba(99,102,241,.2), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
-    .hero h1{font-size:2.4rem; line-height:1.2; margin:8px 0 14px}
-    .hook{font-weight:700; font-size:1.05rem; color:#c9d6e5; background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.25); padding:10px 14px; border-radius:12px; display:inline-flex; align-items:center; gap:10px}
-    .hero p{color:#cbd5e1}
-    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px}
-    .stat{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px; text-align:center}
-    .stat strong{display:block; font-size:1.6rem}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:20px; box-shadow:var(--shadow)}
-    h2{font-size:1.6rem; margin:6px 0 4px}
-    h3{font-size:1.15rem; margin:20px 0 8px}
-    .toc{position:relative}
-    .toc ol{padding-left:18px}
-    .toc a{color:#cbd5e1}
-    .toc a:hover{color:white}
-    .kicker{font-weight:800; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; color:#8aa2ff}
-    .section{margin:28px 0}
-    .prose p{margin:10px 0; color:#dde6f3}
-    .prose p strong{color:#fff}
-    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); color:#9fb2c7; font-size:.85rem}
-    .chips{display:flex; flex-wrap:wrap; gap:10px}
-    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:24px}
-    .three-col{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
-    .svg-wrap{display:flex; align-items:center; justify-content:center; padding:18px; background:#0e131a; border:1px dashed rgba(255,255,255,.08); border-radius:16px}
-    .note{font-size:.9rem; color:#9fb2c7}
-    footer{margin-top:40px; padding:40px 0; border-top:1px solid rgba(255,255,255,.08); color:#9fb2c7}
-    .newsletter{display:grid; grid-template-columns:1fr .9fr; gap:20px; align-items:center}
-    .input{display:flex; gap:10px}
-    .input input{flex:1; background:#0f151d; border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px 12px; color:white}
-    .input input:focus{outline:2px solid var(--ring); border-color:transparent}
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.35); color:#6ee7b7; border-radius:999px; font-size:.8rem}
-    .quote{border-left:3px solid var(--brand-2); padding-left:14px; color:#cfe0ff; background:rgba(99,102,241,.08); border-radius:8px; padding:12px 14px}
-    .timeline{position:relative; padding-left:24px}
-    .timeline::before{content:""; position:absolute; left:8px; top:0; width:2px; height:100%; background:linear-gradient(180deg, var(--brand), transparent)}
-    .timeline .item{position:relative; margin:14px 0}
-    .timeline .item::before{content:""; position:absolute; left:-18px; top:6px; width:10px; height:10px; background:var(--brand-2); border-radius:50%; box-shadow:0 0 0 3px rgba(89,109,255,.25)}
-    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .gallery figure{margin:0}
-    .gallery figcaption{font-size:.85rem; color:#a9bed7}
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
-    @media (max-width: 980px){
-      .hero-card{grid-template-columns:1fr;}
-      .stats{grid-template-columns:1fr 1fr}
-      .two-col{grid-template-columns:1fr}
-      .three-col{grid-template-columns:1fr}
-      .newsletter{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 768px) {
-      .nav-inner {
-        flex-wrap: wrap;
-      }
-      nav ul {
-        display: flex;
-        flex-direction: column;
-        background: #6d28d9;
-        padding: 1rem;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        border-radius: 0 0 8px 8px;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-      }
-      nav ul.show {
-        max-height: 500px;
-        opacity: 1;
-      }
-      .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text);
-      }
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eby</title>
+  <meta name="description" content="Blog Ebi" />
+  <meta name="author" content="Ebi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#12161b; --muted:#8ea0b3; --text:#e7edf5; --brand:#63e; --brand-2:#59f; --accent:#22c55e; --ring:rgba(99, 102, 241, .45);
+      --shadow:0 10px 30px rgba(0,0,0,.35), 0 2px 10px rgba(99,102,241,.15)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:linear-gradient(180deg, #0b0d10 0%, #0c1016 50%, #0b0d10 100%); color:var(--text); font-family:'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.6}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{color:var(--brand-2)}
+    .container{max-width:1120px; margin:0 auto; padding:24px}
+    header.nav{position:static; top:0; z-index:40; backdrop-filter:saturate(1.2) blur(10px); background:rgba(11,13,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{display:flex; gap:14px; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.25px}
+    .brand .logo{width:34px; height:34px}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); border-radius:999px; font-size:.85rem; color:var(--muted)}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; border:0; border-radius:14px; box-shadow:var(--shadow); cursor:pointer}
+    .btn.secondary{background:#1d2330}
+    .btn:hover{transform:translateY(-1px)}
+    .grid{display:grid; gap:24px}
+    .hero{padding:48px 0 16px}
+    .hero-card{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; padding:28px; border-radius:24px; background:radial-gradient(1200px 600px at 0% -10%, rgba(99,102,241,.2), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
+    .hero h1{font-size:2.4rem; line-height:1.2; margin:8px 0 14px}
+    .hook{font-weight:700; font-size:1.05rem; color:#c9d6e5; background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.25); padding:10px 14px; border-radius:12px; display:inline-flex; align-items:center; gap:10px}
+    .hero p{color:#cbd5e1}
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px}
+    .stat{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px; text-align:center}
+    .stat strong{display:block; font-size:1.6rem}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:20px; box-shadow:var(--shadow)}
+    h2{font-size:1.6rem; margin:6px 0 4px}
+    h3{font-size:1.15rem; margin:20px 0 8px}
+    .toc{position:relative}
+    .toc ol{padding-left:18px}
+    .toc a{color:#cbd5e1}
+    .toc a:hover{color:white}
+    .kicker{font-weight:800; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; color:#8aa2ff}
+    .section{margin:28px 0}
+    .prose p{margin:10px 0; color:#dde6f3}
+    .prose p strong{color:#fff}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); color:#9fb2c7; font-size:.85rem}
+    .chips{display:flex; flex-wrap:wrap; gap:10px}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+    .three-col{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+    .svg-wrap{display:flex; align-items:center; justify-content:center; padding:18px; background:#0e131a; border:1px dashed rgba(255,255,255,.08); border-radius:16px}
+    .note{font-size:.9rem; color:#9fb2c7}
+    footer{margin-top:40px; padding:40px 0; border-top:1px solid rgba(255,255,255,.08); color:#9fb2c7}
+    .newsletter{display:grid; grid-template-columns:1fr .9fr; gap:20px; align-items:center}
+    .input{display:flex; gap:10px}
+    .input input{flex:1; background:#0f151d; border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px 12px; color:white}
+    .input input:focus{outline:2px solid var(--ring); border-color:transparent}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.35); color:#6ee7b7; border-radius:999px; font-size:.8rem}
+    .quote{border-left:3px solid var(--brand-2); padding-left:14px; color:#cfe0ff; background:rgba(99,102,241,.08); border-radius:8px; padding:12px 14px}
+    .timeline{position:relative; padding-left:24px}
+    .timeline::before{content:""; position:absolute; left:8px; top:0; width:2px; height:100%; background:linear-gradient(180deg, var(--brand), transparent)}
+    .timeline .item{position:relative; margin:14px 0}
+    .timeline .item::before{content:""; position:absolute; left:-18px; top:6px; width:10px; height:10px; background:var(--brand-2); border-radius:50%; box-shadow:0 0 0 3px rgba(89,109,255,.25)}
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .gallery figure{margin:0}
+    .gallery figcaption{font-size:.85rem; color:#a9bed7}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    @media (max-width: 980px){
+      .hero-card{grid-template-columns:1fr;}
+      .stats{grid-template-columns:1fr 1fr}
+      .two-col{grid-template-columns:1fr}
+      .three-col{grid-template-columns:1fr}
+      .newsletter{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    background: #6d28d9;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
 
-    @media (min-width: 769px) {
-      .nav-toggle {
-        display: none;
-      }
-      nav ul {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-      }
-      nav a {
-        color: var(--text);
-      }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Eby",
-    "description": "Blog Ebi",
-    "url": "https://example.com/",
-    "inLanguage": "id-ID",
-    "author": {
-      "@type": "Person",
-      "name": "Ebi"
-    }
-  }
-  </script>
+    max-height: 0;           /* awal tertutup */
+    overflow: hidden;
+    opacity: 0;              /* awal transparan */
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav ul.show {
+    max-height: 500px;      /* cukup besar agar muat semua menu */
+    opacity: 1;
+  }
+}
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Eby",
+    "description": "Blog Ebi",
+    "url": "https://example.com/",
+    "inLanguage": "id-ID",
+    "author": {
+      "@type": "Person",
+      "name": "Ebi"
+    }
+  }
+  </script>
 </head>
 <body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <!-- Logo SVG -->
+        <svg class="logo" role="img" aria-label="Logo Ebi" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <title>Logo Ebi</title>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#60a5fa"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)"/>
+          <path d="M20 20h24v6H20zm0 10h18v6H20zm0 10h24v6H20z" fill="#fff" opacity=".95"/>
+        </svg>
+        <span>EBI</span>
+        <span class="pill">
+          <!-- spark icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="ikon kilau" xmlns="http://www.w3.org/2000/svg"><title>Kilat</title><path d="M12 2l2.5 5 5 2.5-5 2.5-2.5 5-2.5-5L4.5 9.5 9.5 7z" fill="currentColor"/></svg>
+          Blog pribadi
+        </span>
+      </div>
+      <nav class="chips">
+        <a class="tag" href="#tentang">Tentang</a>
+        <a class="tag" href="#cerita">Cerita</a>
+        <a class="tag" href="#kegiatan">Kegiatan</a>
+        <a class="tag" href="#arsip">Arsip</a>
+        <a class="tag" href="#galeri">Galeri</a>
+        <a class="tag" href="#faq">FAQ</a>
+        <a class="tag" href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="/" class="brand">
-      <img src="https://assets.website-files.com/643b216973347c617a262483/643d9c1044464c70d49911e8_logo-white.svg" loading="lazy" width="34" height="34" alt="Logo" class="logo" />
-      <div>Eby</div>
-    </a>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div>
+          <div class="hook">
+            <!-- Fire Icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="ikon api" xmlns="http://www.w3.org/2000/svg"><title>Api</title><path d="M12 2s4 3 4 7-2 6-4 6-4-2-4-6 4-7 4-7z" fill="currentColor"/></svg>
+            Hook: “Saya Ebi — cerita real, vibes chill, no drama. Gas scroll kalau kamu siap relate! ✨”
+          </div>
+          <h1>Saya Ebi — Tempat Pulang Buat Semua Cerita</h1>
+          <p>
+            Selamat datang di beranda resmi <strong>Saya Ebi</strong>. Ini adalah ruang digital tempat aku menaruh potongan hidup: 
+            catatan yang tumbuh dari rasa penasaran, momen yang ditangkap diam-diam, dan pelajaran yang terlalu sayang untuk disimpan sendiri. 
+            Blog ini adalah arsip <em>everything Ebi</em>: dari cerita kecil yang lucu, pengalaman kerja, eksplorasi hobi, perjalanan, hingga proses kreatif. 
+            Kalau kamu butuh teman bacaan yang santai tapi berisi, kamu nyasar ke tempat yang tepat.
+          </p>
+          <div class="stats">
+            <div class="stat"><span class="note">Tulisan</span><strong>200+</strong></div>
+            <div class="stat"><span class="note">Topik</span><strong>15+</strong></div>
+            <div class="stat"><span class="note">Mood</span><strong>Chill 🔊</strong></div>
+          </div>
+        </div>
+        <div class="svg-wrap" aria-label="Ilustrasi avatar Ebi">
+          <!-- Avatar / Hero SVG -->
+          <svg viewBox="0 0 240 200" role="img" aria-label="Avatar Ebi" xmlns="http://www.w3.org/2000/svg">
+            <title>Avatar Ebi</title>
+            <defs>
+              <linearGradient id="bgGrad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#1f2937"/>
+                <stop offset="100%" stop-color="#0b1220"/>
+              </linearGradient>
+              <linearGradient id="ring" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="200" rx="18" fill="url(#bgGrad)"/>
+            <circle cx="120" cy="90" r="58" fill="#111827" stroke="url(#ring)" stroke-width="4"/>
+            <circle cx="120" cy="90" r="46" fill="#0f172a"/>
+            <rect x="96" y="70" width="48" height="40" rx="10" fill="#334155"/>
+            <circle cx="112" cy="88" r="5" fill="#e5e7eb"/>
+            <circle cx="128" cy="88" r="5" fill="#e5e7eb"/>
+            <rect x="108" y="98" width="24" height="4" rx="2" fill="#e5e7eb"/>
+            <g>
+              <rect x="36" y="156" width="168" height="8" rx="4" fill="#334155"/>
+              <rect x="52" y="170" width="136" height="6" rx="3" fill="#334155"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
 
-        <button class="nav-toggle" aria-label="Toggle navigation menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-    </button>
+    <section class="card toc" aria-labelledby="toc-heading">
+      <h2 id="toc-heading" class="kicker">Navigasi Cepat</h2>
+      <ol>
+        <li><a href="#tentang">Perkenalan: Kenapa “Saya Ebi”</a></li>
+        <li><a href="#nilai">Nilai, Sikap, & Kompas Hidup</a></li>
+        <li><a href="#cerita">Kumpulan Cerita tentang Ebi</a></li>
+        <li><a href="#kegiatan">Kegiatan & Aktivitas</a></li>
+        <li><a href="#arsip">Arsip Tema, Seri, & Musim Tulisan</a></li>
+        <li><a href="#galeri">Galeri Ilustrasi & SVG</a></li>
+        <li><a href="#newsletter">Berlangganan Update</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ol>
+      <p class="note">Keyword utama halaman ini: <strong>Saya Ebi</strong>. Kamu akan sering melihatnya di beberapa bagian, supaya mesin pencari paham konteks blog ini.</p>
+    </section>
 
-    <nav>
-      <ul>
-        <li><a href="#prose">Blog</a></li>
-        <li><a href="#stats">Stats</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <section id="tentang" class="section">
+      <div class="two-col">
+        <div class="card prose">
+          <h2>Perkenalan: Kenapa “Saya Ebi”</h2>
+          <p>
+            "<strong>Saya Ebi</strong>" adalah kalimat yang sederhana, tapi menyimpan arah: sebuah deklarasi yang terus kubawa ketika menulis. 
+            Setiap halaman di blog ini, setiap paragraf, setiap kutipan, bermula dari kejujuran kecil yang kubawa dari keseharian. Aku percaya 
+            bahwa tulisan yang paling kuat sering lahir dari hal-hal yang tampak biasa: menunggu pesanan kopi di warung langganan, jalan 
+            kaki menyusuri kampung saat hujan turun pelan, atau obrolan singkat dengan orang asing yang ternyata lucu dan hangat. 
+            Dengan cara ini, <em>perkenalan blog Ebi</em> tidak hanya berhenti pada sapaan, tapi bergerak menjadi undangan untuk membaca lebih jauh.
+          </p>
+          <p>
+            Blog ini kubangun sebagai tempat untuk menyimpan <strong>kumpulan segala cerita tentang Ebi</strong>. Ceritanya mungkin berubah-ubah, 
+            tapi benang merahnya selalu sama: usaha untuk siap menjadi diri sendiri. Ada saat-saat di mana aku fokus mengejar target kerja, ada 
+            periode yang penuh percobaan seperti belajar hal baru, ada pula waktu jeda ketika yang kubutuhkan hanya diam dan mendengar. 
+            Semua fase itu tercatat di sini, sehingga halaman ini menjadi semacam peta yang menandai jejak.
+          </p>
+          <p>
+            Buat kamu yang baru mampir: semoga kamu mendapati sesuatu yang berguna—entah itu informasi, inspirasi, atau sekadar temuan kecil yang 
+            menghangatkan hati. Kalau kamu sering kembali, terima kasih sudah menjadikan ruang ini bagian dari rutinitasmu. <strong>Saya Ebi</strong>, dan ini rumah digitalku.
+          </p>
+          <div class="quote">“Nggak semua momen harus jadi prestasi; sebagian cukup jadi cerita, supaya kita ingat pernah sampai sejauh ini.”</div>
+          <p>
+            Selain sebagai wadah cerita, blog ini juga fungsi sebagai studio mini. Di sinilah aku bereksperimen dengan gaya tulisan, visual,
+            dan bentuk presentasi. Kamu akan ketemu halaman-halaman yang rapi, beberapa yang nyeleneh, beberapa yang main-main. Semuanya sengaja 
+            dipertemukan agar kamu bisa ikut merasakan spektrum mood yang menyusun hari-hari seorang Ebi.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ikon & Identitas</h3>
+          <p class="note">Sedikit tentang gaya visual di <strong>Saya Ebi</strong>.</p>
+          <div class="three-col">
+            <figure class="svg-wrap" aria-label="Ikon pena">
+              <!-- Pen Icon -->
+              <svg role="img" aria-label="Ikon pena" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Pena</title><path d="M3 17l2 4 4 2 10-10-6-6L3 17z" fill="#93c5fd"/><path d="M14 4l6 6 1-1a2 2 0 0 0 0-3l-3-3a2 2 0 0 0-3 0l-1 1z" fill="#60a5fa"/></svg>
+            </figure>
+            <figure class="svg-wrap" aria-label="Ikon kamera">
+              <!-- Camera Icon -->
+              <svg role="img" aria-label="Ikon kamera" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Kamera</title><rect x="3" y="7" width="18" height="12" rx="2" fill="#a78bfa"/><circle cx="12" cy="13" r="4" fill="#7c3aed"/><rect x="7" y="4" width="4" height="3" rx="1" fill="#c4b5fd"/></svg>
+            </figure>
+            <figure class="svg-wrap" aria-label="Ikon kalender">
+              <!-- Calendar Icon -->
+              <svg role="img" aria-label="Ikon kalender" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Kalender</title><rect x="3" y="5" width="18" height="16" rx="2" fill="#34d399"/><rect x="3" y="8" width="18" height="3" fill="#059669"/><circle cx="9" cy="14" r="2" fill="#ecfeff"/><circle cx="15" cy="14" r="2" fill="#ecfeff"/></svg>
+            </figure>
+          </div>
+          <p class="note">Ikon-ikon ini sering muncul sebagai penanda: pena untuk tulisan, kamera untuk visual, kalender untuk aktivitas.</p>
+        </div>
+      </div>
+    </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('nav ul');
+    <section id="nilai" class="section card prose">
+      <h2>Nilai, Sikap, & Kompas Hidup</h2>
+      <p>
+        Di balik setiap tulisan, ada nilai yang memegang kendali. Buatku, <strong>ketulusan</strong> adalah hal pertama. Aku nggak selalu benar,
+        tapi aku berusaha jujur: jujur pada perasaan, jujur pada data, jujur pada proses. Ketulusan membuatku berani menulis gagal dan ragu—dua hal 
+        yang sering kali disensor di dunia internet. Kedua, <strong>konsistensi</strong>. Bukan berarti harus setiap hari, tapi ketika datang ya hadir sungguh-sungguh.
+        Ketiga, <strong>rasa ingin tahu</strong>. Dunia terlalu besar untuk dihakimi buru-buru, jadi aku memilih mengajukan pertanyaan.
+      </p>
+      <p>
+        Nilai-nilai ini membentuk cara <strong>Saya Ebi</strong> memandang topik. Saat menulis tentang pekerjaan, aku mencoba adil: mengakui kelebihan,
+        membicarakan tantangan, dan menawarkan langkah yang bisa dicoba pembaca. Saat menulis tentang relasi, aku menahan diri untuk tidak memberi
+        vonis, karena setiap orang membawa latar yang berbeda. Saat menulis tentang hobi, aku tidak malu terlihat pemula; di situlah letak keseruannya.
+      </p>
+      <p>
+        Kompas hidupku sederhana: <em>hari ini lebih baik daripada kemarin</em>. Tidak selalu spektakuler. Kadang hanya berupa membaca beberapa halaman buku,
+        menulis tiga paragraf, atau membalas pesan yang kupending terlalu lama. Hal-hal kecil itu, kalau dirawat, pelan-pelan membangun pondasi yang kuat.
+        Dan lewat blog ini, aku bisa mengajakmu melihat prosesnya dari dekat.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Prinsip Saat Menulis</h3>
+          <ul>
+            <li>Mulai dari pengalaman nyata, bukan asumsi semata.</li>
+            <li>Berikan konteks yang cukup, supaya pembaca tidak tersesat.</li>
+            <li>Hargai perbedaan sudut pandang; hindari generalisasi murahan.</li>
+            <li>Utamakan kejelasan, baru kemudian kecantikan gaya bahasa.</li>
+            <li>Selipkan kegembiraan kecil, karena hidup butuh jeda.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Hal-Hal yang Sedang Kupelajari</h3>
+          <ul>
+            <li>Merawat perhatian di era notifikasi tanpa henti.</li>
+            <li>Mengelola proyek personal supaya tetap fun.</li>
+            <li>Fotografi ponsel: komposisi, cahaya, dan cerita.</li>
+            <li>Menemukan gaya visual untuk ilustrasi SVG di blog.</li>
+            <li>Menulis panjang sambil tetap ramah ke pembaca mobile.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-  });
-</script>
+    <section id="cerita" class="section">
+      <div class="two-col">
+        <article class="card prose">
+          <h2>Kumpulan Cerita tentang Ebi</h2>
+          <p>
+            Halaman ini menjadi gerbang ke banyak cerita. Ada yang renyah, ada yang reflektif, ada yang teknis, ada yang hanya ingin tertawa. 
+            Semua kususun dalam <strong>seri</strong> agar kamu mudah mengikuti: <em>Jalan Pagi</em> untuk potongan harian, <em>Meja Kerja</em> untuk produktivitas, 
+            <em>Ruang Dengar</em> untuk musik, <em>Kamera Depan</em> untuk visual, dan <em>Catatan Diri</em> untuk hal-hal personal. 
+            Kalau kamu baru pertama kali kenal, mulai dari seri favoritku: <strong>Jalan Pagi</strong>, karena di sana vibe-nya paling terasa.
+          </p>
+          <h3>Seri: Jalan Pagi</h3>
+          <p>
+            Pagi adalah jam paling jujur. Udara masih bersih, notifikasi belum bising, dan pikiran belum lomba sendiri. Di seri ini, <strong>Saya Ebi</strong> 
+            menulis observasi kecil: warung yang selalu lebih ramai hari Senin, tukang sayur yang hafal nama, suara sepeda motor yang lewat di gang 
+            sempit, dan ritme kota yang bangun pelan-pelan. Tulisan-tulisan ini pendek, tapi menyisakan ekor panjang di pikiran.
+          </p>
+          <h3>Seri: Meja Kerja</h3>
+          <p>
+            Ada orang yang produktif kalau suasananya ramai. Ada yang butuh sunyi total. Aku—di tengah. Di sini aku berbagi eksperimen workflow, 
+            alat bantu yang kupakai, cara merencanakan minggu, dan bagaimana mengatur energi agar tidak habis di hal-hal yang salah. Tidak ada 
+            formula sakti; hanya catatan dari percobaan yang terus berjalan. Jika kamu suka topik semacam ini, bookmark halaman ini.
+          </p>
+          <h3>Seri: Ruang Dengar</h3>
+          <p>
+            Musik adalah cara termudah untuk mengubah cuaca batin. Di seri ini, aku menaruh playlist tematik: fokus, santai, hujan, atau buat teman 
+            perjalanan jauh. Selain itu ada review pendek album atau lagu yang lagi kusuka. Bukan ulasan teknis, lebih ke cerita bagaimana musik itu 
+            menemani hari tertentu. Kalau kamu punya rekomendasi, tinggal kirim di bagian <a href="#kontak">kontak</a>.
+          </p>
+          <h3>Seri: Kamera Depan</h3>
+          <p>
+            Visual di blog ini banyak memanfaatkan <strong>gambar SVG</strong> supaya ringan, bersih, dan bisa disesuaikan tanpa kehilangan kualitas. 
+            Aku suka eksplorasi bentuk sederhana: lingkaran, garis, dan gradien. Kamu akan menemukan ikon-ikon kecil yang menjadi bagian dari 
+            identitas visual <strong>Saya Ebi</strong>. Sesekali aku juga memotret dengan ponsel; hasilnya kubagikan di galeri.
+          </p>
+          <h3>Seri: Catatan Diri</h3>
+          <p>
+            Ini bagian paling personal. Tentang keluarga, sahabat, sepi, juga masa depan. Aku menulisnya pelan-pelan karena beberapa hal butuh jarak 
+            dan jeda sebelum siap dipublikasikan. Jika kamu membaca dan merasa tersentuh, itu bukan karena tulisannya sempurna, melainkan karena 
+            kita kebetulan pernah melalui rasa yang mirip.
+          </p>
+        </article>
+        <aside class="card">
+          <h3>Mini Panduan Baca</h3>
+          <ul class="note">
+            <li>Kalau ingin cepat paham topik, buka <a href="#arsip">arsip</a> dan pilih tema.</li>
+            <li>Kalau ingin santai, mulai dari seri <em>Jalan Pagi</em>.</li>
+            <li>Kalau mencari referensi kerja, masuk ke <em>Meja Kerja</em>.</li>
+            <li>Kalau butuh mood, putar playlist di <em>Ruang Dengar</em>.</li>
+          </ul>
+          <div class="svg-wrap" aria-label="Ilustrasi buku dan kopi">
+            <!-- Book & Coffee SVG -->
+            <svg role="img" aria-label="Buku dan Kopi" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg"><title>Buku dan Kopi</title><rect x="16" y="20" width="120" height="80" rx="10" fill="#334155"/><rect x="24" y="28" width="104" height="64" rx="6" fill="#64748b"/><rect x="150" y="32" width="70" height="40" rx="8" fill="#f59e0b"/><circle cx="185" cy="52" r="12" fill="#fff7ed"/><path d="M170 40c8 10 22 10 30 0" stroke="#fde68a" stroke-width="3" fill="none"/></svg>
+          </div>
+        </aside>
+      </div>
+    </section>
 
+    <section id="kegiatan" class="section card prose">
+      <h2>Kegiatan & Aktivitas</h2>
+      <p>
+        Selain menulis, ada beberapa kegiatan yang sengaja kurawat supaya hidup tidak hanya di layar. Aktivitas-aktivitas ini juga sering jadi bahan 
+        baku tulisan, karena pengalaman langsung selalu memberi detail yang tidak ditemukan di buku panduan. Kalau kamu bertanya, apa saja sih 
+        <em>kegiatan dan aktivitas</em> yang mengisi hari-hari <strong>Saya Ebi</strong>? Ini ringkasannya.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Ritme Harian</h3>
+          <div class="timeline">
+            <div class="item">
+              <strong>Pagi</strong> — Jalan santai, observasi kecil, menulis 30 menit. Kadang-kadang ditambah musik yang menenangkan.
+            </div>
+            <div class="item">
+              <strong>Siang</strong> — Fokus kerja utama, membalas email, dan membuat draf ide untuk tulisan berikutnya.
+            </div>
+            <div class="item">
+              <strong>Sore</strong> — Aktivitas fisik ringan, beres-beres ruang kerja, dan membaca beberapa halaman buku.
+            </div>
+            <div class="item">
+              <strong>Malam</strong> — Rekap hari, menyunting tulisan, dan menyiapkan rencana esok.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Proyek Kecil Berjalan</h3>
+          <ul>
+            <li><strong>Atlas Jalan Pagi</strong> — Mengumpulkan 100 catatan rute favorit lengkap dengan foto dan peta sederhana.</li>
+            <li><strong>Ruang Dengar Vol. 1</strong> — Playlist tematik untuk fokus dan menulis panjang.</li>
+            <li><strong>SVG Journal</strong> — Eksperimen membuat ikon baru tiap minggu untuk memperkaya identitas visual blog.</li>
+            <li><strong>Meja Kerja Bersih</strong> — Menyusun ulang ruang kerja agar minimalis tapi tidak kaku.</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        Kegiatan ini bukan daftar prestasi, melainkan cara kecil menjaga semangat. Bagian terbaiknya adalah ketika pembaca ikut mencoba dan memberi 
+        umpan balik. Dari situ, ide berkembang dan beberapa tulisan mendapat bab lanjutan.
+      </p>
+    </section>
+
+    <section id="arsip" class="section">
+      <div class="two-col">
+        <div class="card prose">
+          <h2>Arsip Tema, Seri, & Musim Tulisan</h2>
+          <p>
+            Agar mudah ditelusuri, <strong>Saya Ebi</strong> menyusun arsip berdasarkan tema. Kamu bisa memilih topik sesuai kebutuhan mood, lalu 
+            menyelam lebih dalam ke seri yang relevan. Anggap saja seperti rak buku yang disusun menurut warna.
+          </p>
+          <h3>Tema Utama</h3>
+          <ul>
+            <li><strong>Harian</strong>: catatan singkat yang terasa dekat dan hangat.</li>
+            <li><strong>Kerja & Proses</strong>: strategi ringan, alat bantu, dan refleksi.</li>
+            <li><strong>Musik & Mood</strong>: lagu, playlist, dan cerita di baliknya.</li>
+            <li><strong>Visual</strong>: gambar, ikon, dan tip kreatif.</li>
+            <li><strong>Relasi & Diri</strong>: hal-hal personal, rapuh tapi jujur.</li>
+          </ul>
+          <h3>Rekomendasi Baca Pertama</h3>
+          <ol>
+            <li><em>Menulis Saat Hujan</em> — tentang menemukan ritme di cuaca sendu.</li>
+            <li><em>Meja Kerja: Versi Ringkas</em> — menyusun alat dan alur dengan santai.</li>
+            <li><em>Playlist Untuk Berangkat</em> — musik yang cocok untuk perjalanan pagi.</li>
+            <li><em>SVG Buat Pemula</em> — cara gampang bikin ilustrasi ringan.</li>
+            <li><em>Catatan Diri: Mengizinkan Jeda</em> — refleksi tentang berhenti sejenak.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Badge & Pencapaian Kecil</h3>
+          <p class="note">Ini bukan piala, hanya penanda perjalanan.</p>
+          <div class="chips">
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" role="img" aria-label="ikon cek" xmlns="http://www.w3.org/2000/svg"><title>Cek</title><path d="M9 16l-4-4 2-2 2 2 6-6 2 2z" fill="currentColor"/></svg>
+              100 Hari Nulis
+            </span>
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" role="img" aria-label="ikon hati" xmlns="http://www.w3.org/2000/svg"><title>Hati</title><path d="M12 21s-8-4.5-8-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-10 10-10 10z" fill="currentColor"/></svg>
+              1000+ Pembaca
+            </span>
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" role="img" aria-label="ikon bintang" xmlns="http://www.w3.org/2000/svg"><title>Bintang</title><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="currentColor"/></svg>
+              Seri Favorit: Jalan Pagi
+            </span>
+          </div>
+          <div class="svg-wrap" aria-label="Ilustrasi arsip">
+            <!-- Archive SVG -->
+            <svg role="img" aria-label="Laci Arsip" viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg"><title>Laci Arsip</title><rect x="20" y="20" width="200" height="80" rx="12" fill="#1f2937"/><rect x="28" y="28" width="184" height="64" rx="8" fill="#334155"/><rect x="96" y="52" width="48" height="16" rx="6" fill="#64748b"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri" class="section card">
+      <h2>Galeri Ilustrasi & SVG</h2>
+      <p class="note">Semua SVG ini bebas diperkecil-dibesarkan tanpa pecah, dan masing-masing dilengkapi alt/title agar ramah aksesibilitas.</p>
+      <div class="gallery">
+        <figure>
+          <div class="svg-wrap" aria-label="Ilustrasi peta pagi">
+            <!-- Map SVG -->
+            <svg role="img" aria-label="Peta Jalan Pagi" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><title>Peta Jalan Pagi</title><rect x="8" y="8" width="184" height="104" rx="12" fill="#0f172a"/><path d="M20 96c40-50 60-30 80-60 20-30 40-10 80-40" stroke="#60a5fa" stroke-width="3" fill="none"/><circle cx="24" cy="92" r="5" fill="#22c55e"/><circle cx="176" cy="16" r="6" fill="#ef4444"/></svg>
+          </div>
+          <figcaption>Peta rute favorit di seri <em>Jalan Pagi</em>.</figcaption>
+        </figure>
+        <figure>
+          <div class="svg-wrap" aria-label="Ilustrasi meja kerja">
+            <!-- Desk SVG -->
+            <svg role="img" aria-label="Meja Kerja" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><title>Meja Kerja</title><rect x="12" y="70" width="176" height="32" rx="8" fill="#1f2937"/><rect x="30" y="30" width="140" height="50" rx="10" fill="#334155"/><rect x="36" y="36" width="60" height="38" rx="6" fill="#64748b"/><rect x="100" y="36" width="64" height="38" rx="6" fill="#475569"/></svg>
+          </div>
+          <figcaption>Setup simpel yang memudahkan fokus.</figcaption>
+        </figure>
+        <figure>
+          <div class="svg-wrap" aria-label="Ilustrasi headphone">
+            <!-- Headphone SVG -->
+            <svg role="img" aria-label="Headphone" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><title>Headphone</title><rect x="50" y="40" width="100" height="40" rx="20" fill="#7c3aed"/><rect x="40" y="44" width="20" height="32" rx="8" fill="#a78bfa"/><rect x="140" y="44" width="20" height="32" rx="8" fill="#a78bfa"/></svg>
+          </div>
+          <figcaption>Ruang Dengar: musik untuk berbagai suasana.</figcaption>
+        </figure>
+        <figure>
+          <div class="svg-wrap" aria-label="Ilustrasi kamera depan">
+            <!-- Front Camera SVG -->
+            <svg role="img" aria-label="Kamera Depan" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><title>Kamera Depan</title><rect x="40" y="30" width="120" height="60" rx="10" fill="#0ea5e9"/><circle cx="100" cy="60" r="18" fill="#f0f9ff"/></svg>
+          </div>
+          <figcaption>Kamera depan, cerita dari sudut pandang penulis.</figcaption>
+        </figure>
+        <figure>
+          <div class="svg-wrap" aria-label="Ilustrasi hati hangat">
+            <!-- Warm Heart SVG -->
+            <svg role="img" aria-label="Hati Hangat" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><title>Hati Hangat</title><path d="M100 100s-50-28-50-62a24 24 0 0 1 44-14 24 24 0 0 1 44 14c0 34-38 62-38 62z" fill="#ef4444"/></svg>
+          </div>
+          <figcaption>Catatan Diri: hangat, rapuh, apa adanya.</figcaption>
+        </figure>
+        <figure>
+          <div class="svg-wrap" aria-label="Ilustrasi kalender aktif">
+            <!-- Active Calendar SVG -->
+            <svg role="img" aria-label="Kalender Aktivitas" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><title>Kalender Aktivitas</title><rect x="20" y="20" width="160" height="80" rx="12" fill="#34d399"/><rect x="20" y="30" width="160" height="14" fill="#10b981"/><circle cx="60" cy="66" r="6" fill="#ecfeff"/><circle cx="100" cy="66" r="6" fill="#ecfeff"/><circle cx="140" cy="66" r="6" fill="#ecfeff"/></svg>
+          </div>
+          <figcaption>Kalender aktivitas: ritme yang terjaga.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section card">
+      <div class="newsletter">
+        <div>
+          <h2>Berlangganan Update</h2>
+          <p class="note">Masukkan email biar nggak ketinggalan cerita baru di <strong>Saya Ebi</strong>. No spam, no drama—cuma cerita yang tulus.</p>
+          <div class="input">
+            <input type="email" placeholder="nama@email.com" aria-label="Email" />
+            <button class="btn" aria-label="Daftar newsletter">
+              <svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="ikon kirim" xmlns="http://www.w3.org/2000/svg"><title>Kirim</title><path d="M2 21l21-9L2 3v7l15 2-15 2z" fill="#fff"/></svg>
+              Langganan
+            </button>
+          </div>
+        </div>
+        <div class="svg-wrap" aria-label="Ilustrasi amplop">
+          <!-- Mail SVG -->
+          <svg role="img" aria-label="Amplop" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg"><title>Amplop</title><rect x="20" y="30" width="200" height="80" rx="12" fill="#1f2937"/><path d="M20 30l100 60 100-60" fill="#334155"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section card prose">
+      <h2>FAQ</h2>
+      <h3>Kenapa namanya “Saya Ebi”?</h3>
+      <p>
+        Karena blog ini berangkat dari suara yang personal. "Saya" menandai perspektif, "Ebi" menandai subjek. Digabung, jadi kompas yang jelas. 
+        Tujuannya sederhana: ketika orang mencari cerita atau catatan tentangku, mereka bisa menemukan halaman ini tanpa bingung.
+      </p>
+      <h3>Apa yang membedakan blog ini dengan yang lain?</h3>
+      <p>
+        <strong>Kejujuran gaya</strong>. Aku tidak mengejar sensasi, tidak juga mengejar kesempurnaan. Aku mengejar kesetiaan pada proses. 
+        Visualnya rapi, tulisannya hangat, ritmenya konsisten, dan semuanya dirawat dengan hati. Ditambah lagi, penggunaan <strong>SVG</strong> 
+        membuat halaman ini terasa ringan walau kaya ilustrasi.
+      </p>
+      <h3>Apakah semua tulisan asli?</h3>
+      <p>
+        Ya. Kutipan dari luar selalu diberi kredit. Sebagian besar tulisan bermula dari pengalaman langsung, lalu dilengkapi referensi seperlunya.
+      </p>
+      <h3>Bisa kolaborasi?</h3>
+      <p>
+        Tentu. Kirim idemu di bagian <a href="#kontak">kontak</a>. Aku suka proyek kecil yang meaningful dan menyenangkan.
+      </p>
+    </section>
+
+    <section id="kontak" class="section card">
+      <h2>Kontak</h2>
+      <p class="note">Punya saran, ide, atau sekadar mau bilang “halo”? Tinggalkan pesan di sini.</p>
+      <form class="grid" onsubmit="event.preventDefault(); alert('Terima kasih, pesanmu sudah terkirim!');">
+        <div class="two-col">
+          <label>
+            <span class="sr-only">Nama</span>
+            <input class="input input-text" style="width:100%" type="text" placeholder="Nama" required />
+          </label>
+          <label>
+            <span class="sr-only">Email</span>
+            <input class="input input-text" style="width:100%" type="email" placeholder="Email" required />
+          </label>
+        </div>
+        <label>
+          <span class="sr-only">Pesan</span>
+          <textarea class="input" style="width:100%; min-height:140px; background:#0f151d; border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px 12px; color:white" placeholder="Tulis pesanmu di sini..." required></textarea>
+        </label>
+        <div style="display:flex; gap:12px; align-items:center">
+          <button class="btn" type="submit" aria-label="Kirim pesan">
+            <svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="ikon pesawat kertas" xmlns="http://www.w3.org/2000/svg"><title>Pesawat Kertas</title><path d="M2 21l21-9L2 3v7l15 2-15 2z" fill="#fff"/></svg>
+            Kirim
+          </button>
+          <span class="note">Balasan biasanya singkat, padat, dan jelas—kayak caption IG yang niat.</span>
+        </div>
+      </form>
+    </section>
+
+    <section class="section card prose">
+      <h2>Penutup: Rumah Kecil Bernama “Saya Ebi”</h2>
+      <p>
+        Pada akhirnya, halaman beranda ini adalah pintu depan dari rumah kecil bernama <strong>Saya Ebi</strong>. Di sini kamu bisa masuk, memilih ruang yang 
+        ingin kamu jelajahi, dan pulang dengan membawa sesuatu: mungkin ide, mungkin semangat, mungkin sekadar rasa lega karena menemukan teman baca.
+        Kamu tidak diwajibkan setuju dengan semua yang kubagikan. Aku hanya berharap kamu bisa menemukan cara untuk berdamai dengan prosesmu sendiri.
+      </p>
+      <p>
+        Jika ada satu kalimat yang ingin kutinggalkan untukmu, mungkin ini: <em>rawat hal kecil setiap hari</em>. Karena dari hal-hal kecil itulah 
+        hari-hari besar bertumbuh. Sampai ketemu di tulisan berikutnya.
+      </p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="two-col">
+      <div>
+        <strong>EBI</strong>
+        <p class="note">© <span id="y"></span> — Semua cerita adalah milik penulis. Silakan kutip secukupnya dengan mencantumkan sumber.</p>
+      </div>
+      <div class="chips">
+        <a class="tag" href="#">Instagram</a>
+        <a class="tag" href="#">Twitter</a>
+        <a class="tag" href="#">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear()
+  </script>
 </body>
 </html>
