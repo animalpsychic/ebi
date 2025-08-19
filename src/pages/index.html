@@ -141,37 +141,25 @@
 </head>
 <body>
   <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <!-- Logo SVG -->
-        <svg class="logo" role="img" aria-label="Logo Ebi" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <title>Logo Ebi</title>
-          <defs>
-            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stop-color="#6366f1"/>
-              <stop offset="100%" stop-color="#60a5fa"/>
-            </linearGradient>
-          </defs>
-          <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)"/>
-          <path d="M20 20h24v6H20zm0 10h18v6H20zm0 10h24v6H20z" fill="#fff" opacity=".95"/>
-        </svg>
-        <span>EBI</span>
-        <span class="pill">
-          <!-- spark icon -->
-          <svg width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="ikon kilau" xmlns="http://www.w3.org/2000/svg"><title>Kilat</title><path d="M12 2l2.5 5 5 2.5-5 2.5-2.5 5-2.5-5L4.5 9.5 9.5 7z" fill="currentColor"/></svg>
-          Blog pribadi
-        </span>
-      </div>
-      <nav class="chips">
-        <a class="tag" href="#tentang">Tentang</a>
-        <a class="tag" href="#cerita">Cerita</a>
-        <a class="tag" href="#kegiatan">Kegiatan</a>
-        <a class="tag" href="#arsip">Arsip</a>
-        <a class="tag" href="#galeri">Galeri</a>
-        <a class="tag" href="#faq">FAQ</a>
-        <a class="tag" href="#kontak">Kontak</a>
-      </nav>
-    </div>
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <img src="https://assets.website-files.com/643b216973347c617a262483/643d9c1044464c70d49911e8_logo-white.svg" loading="lazy" width="34" height="34" alt="Logo" class="logo" />
+      <div>Eby</div>
+    </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </button>
+
+    <nav>
+      <ul>
+        <li><a href="#prose">Blog</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </div>
+
   </header>
 
   <main class="container">
