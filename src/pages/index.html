@@ -77,6 +77,30 @@
       .newsletter{grid-template-columns:1fr}
       .gallery{grid-template-columns:1fr 1fr}
     }
+    @media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    background: #6d28d9;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+
+    max-height: 0;           /* awal tertutup */
+    overflow: hidden;
+    opacity: 0;              /* awal transparan */
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav ul.show {
+    max-height: 500px;      /* cukup besar agar muat semua menu */
+    opacity: 1;
+  }
+}
+
   </style>
   <script type="application/ld+json">
   {
