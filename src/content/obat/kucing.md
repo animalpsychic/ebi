@@ -20,7 +20,7 @@ pubDate: "2025-07-08"
       <path d="M35 65 Q50 85 65 65" stroke="#4a2c1f" strokeWidth="2" fill="none"/>
     </svg>
   </div>
-
+Memelihara anak anjing adalah pengalaman yang sangat menyenangkan, namun juga membutuhkan persiapan dan dedikasi. Anak anjing yang masih kecil sangat bergantung pada Anda untuk mendapatkan nutrisi yang tepat, sosialisasi yang baik, dan lingkungan yang aman untuk tumbuh menjadi anjing dewasa yang sehat dan bahagia.
 
 
       <h1>Panduan Lengkap Merawat dan Menumbuhkan Anak Anjing</h1>
