@@ -3,10 +3,6 @@ title: "Malam Minggu"
 pubDate: "2025-07-08"
 ---
 
-import React from 'react';
-
-// Komponen untuk ilustrasi anak anjing dalam format SVG
-const PuppyIllustration = () => (
   <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
     <svg width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       {/* Kepala */}
@@ -24,7 +20,7 @@ const PuppyIllustration = () => (
       <path d="M35 65 Q50 85 65 65" stroke="#4a2c1f" strokeWidth="2" fill="none"/>
     </svg>
   </div>
-);
+
 
 // Komponen utama yang berisi seluruh artikel
 const App = () => {
