@@ -1,7 +1,7 @@
 ---
 title: "Kesehatan Mata: Panduan Lengkap untuk Melindungi Jendela Dunia di Era Digital"
 pubDate: "2025-07-09"
-heroimage:"<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+heroimage: "<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
     <circle cx='50' cy='50' r='40' fill='%23ecf0f1' stroke='%2334495e' stroke-width='2'/>
     <circle cx='50' cy='50' r='20' fill='%233498db'/>
     <path d='M50 50 L50 20' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
