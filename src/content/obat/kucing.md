@@ -1,5 +1,6 @@
 ---
 title: "Kesehatan Mata: Panduan Lengkap untuk Melindungi Jendela Dunia di Era Digital"
+description: "Deskripsi"
 pubDate: "2025-07-09"
 heroimage: ""
 ---
