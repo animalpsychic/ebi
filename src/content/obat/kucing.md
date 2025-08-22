@@ -22,10 +22,7 @@ pubDate: "2025-07-08"
   </div>
 
 
-// Komponen utama yang berisi seluruh artikel
-const App = () => {
-  return (
-    <div style={{ fontFamily: 'sans-serif', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+
       <h1>Panduan Lengkap Merawat dan Menumbuhkan Anak Anjing</h1>
       <p>Memelihara anak anjing adalah pengalaman yang sangat menyenangkan, namun juga membutuhkan persiapan dan dedikasi. Anak anjing yang masih kecil sangat bergantung pada Anda untuk mendapatkan nutrisi yang tepat, sosialisasi yang baik, dan lingkungan yang aman untuk tumbuh menjadi anjing dewasa yang sehat dan bahagia.</p>
       <p>Panduan ini mencakup semua hal penting yang perlu Anda ketahui, mulai dari saat anak anjing baru tiba di rumah Anda hingga mereka bertransisi menjadi anjing dewasa yang berkarakter baik.</p>
@@ -146,4 +143,4 @@ const App = () => {
   );
 };
 
-export default App;
+
