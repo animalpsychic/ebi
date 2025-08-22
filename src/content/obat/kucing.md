@@ -1,6 +1,19 @@
 ---
 title: "Kesehatan Mata: Panduan Lengkap untuk Melindungi Jendela Dunia di Era Digital"
 pubDate: "2025-07-09"
+heroimage:"<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <circle cx='50' cy='50' r='40' fill='%23ecf0f1' stroke='%2334495e' stroke-width='2'/>
+    <circle cx='50' cy='50' r='20' fill='%233498db'/>
+    <path d='M50 50 L50 20' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L67.32 27.68' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L77.32 50' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L67.32 72.32' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L50 80' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L22.68 72.32' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L22.68 50' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <path d='M50 50 L32.68 27.68' stroke='%2334495e' stroke-width='2' stroke-linecap='round'/>
+    <rect x='45' y='45' width='10' height='10' fill='%232ecc71' rx='2' ry='2'/>
+  </svg>">"
 ---
 
 # Kesehatan Mata: Panduan Lengkap untuk Melindungi Jendela Dunia di Era Digital
