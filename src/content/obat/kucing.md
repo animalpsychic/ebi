@@ -2,7 +2,7 @@
 title: "Kesehatan Mata: Panduan Lengkap untuk Melindungi Jendela Dunia di Era Digital"
 description: "Deskripsi"
 pubDate: "2025-07-09"
-heroimage: ""
+heroimage: "https://picsum.photos/600/400?random=1"
 ---
 
 # Kesehatan Mata: Panduan Lengkap untuk Melindungi Jendela Dunia di Era Digital
