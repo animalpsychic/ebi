@@ -2,7 +2,7 @@
 title: "Malam Minggu"
 pubDate: "2025-07-08"
 ---
-
+  <h1>Panduan Lengkap Merawat dan Menumbuhkan Anak Anjing</h1>
   <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
     <svg width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       {/* Kepala */}
